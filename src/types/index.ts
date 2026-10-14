@@ -27,4 +27,23 @@ export interface VoiceNote {
   audioBlob?: Blob;
   audioUrl?: string;
   createdAt: number;
+  aiProvider?: string;
+  aiModel?: string;
+}
+
+export interface AIProviderInfo {
+  name: string;
+  provider: 'gemini' | 'openai' | 'ollama' | 'qwen' | 'openrouter' | 'groq' | 'custom';
+  status: 'active' | 'ready' | 'missing_key' | 'disabled' | 'error';
+  model?: string;
+  audioModel?: string;
+  baseUrl?: string;
+  isFallback?: boolean;
+}
+
+export interface AIProvidersResponse {
+  primary: AIProviderInfo;
+  fallback: AIProviderInfo;
+  autoFailover: boolean;
+  activeProviderInUse: string;
 }

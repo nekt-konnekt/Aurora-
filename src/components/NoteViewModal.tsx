@@ -82,9 +82,11 @@ export const NoteViewModal: React.FC<NoteViewModalProps> = ({
         {/* Header */}
         <div className="px-5 py-4 border-b border-slate-800 flex items-center justify-between gap-3 bg-slate-900/60">
           <div className="min-w-0">
-            <span className="text-[11px] font-medium text-indigo-400 block mb-0.5">
-              {note.intent || 'Note'}
-            </span>
+            <div className="flex items-center gap-2 mb-0.5">
+              <span className="text-[11px] font-medium text-indigo-400">
+                {note.intent || 'Note'}
+              </span>
+            </div>
             <h2 className="text-base font-bold text-white truncate">{note.title}</h2>
           </div>
 

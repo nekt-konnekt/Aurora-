@@ -105,12 +105,13 @@ export default function App() {
           )}
         </div>
 
-        {/* Right side: Home button */}
+        {/* Right side: Blue Home button */}
         <div className="flex items-center gap-2">
           <button
             type="button"
             onClick={() => setCurrentView('landing')}
-            className="px-3.5 py-1.5 text-xs font-semibold text-slate-100 hover:text-white bg-slate-900 hover:bg-slate-800 active:scale-95 border border-slate-700/80 hover:border-slate-600 rounded-lg shadow-sm transition-all cursor-pointer"
+            className="px-3.5 py-1.5 text-xs font-semibold text-white bg-blue-600 hover:bg-blue-500 active:bg-blue-700 active:scale-95 border border-blue-500/80 hover:border-blue-400 rounded-lg shadow-sm shadow-blue-600/30 transition-all cursor-pointer"
+            title="Return to Home screen"
           >
             Home
           </button>
@@ -128,7 +129,7 @@ export default function App() {
                 className="p-4 rounded-xl bg-slate-900 border border-slate-800/80 hover:border-slate-700 transition-all cursor-pointer flex items-center justify-between gap-4 group"
               >
                 <div className="min-w-0 flex-1">
-                  <div className="flex items-center gap-2 text-xs text-slate-500 mb-1">
+                  <div className="flex items-center gap-2 text-xs text-slate-500 mb-1 flex-wrap">
                     <span className="font-mono text-[11px] tabular-nums">
                       {new Date(note.createdAt).toLocaleDateString()}
                     </span>

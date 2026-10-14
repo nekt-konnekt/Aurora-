@@ -279,6 +279,10 @@ export const FloatingPill: React.FC<FloatingPillProps> = ({
           if (res.ok) {
             const data = await res.json();
             aiResult = data.result;
+            if (data.providerName) {
+              aiResult._providerName = data.providerName;
+              aiResult._model = data.model;
+            }
           }
         } catch (e) {
           console.warn('AI transform call error:', e);
@@ -302,6 +306,7 @@ export const FloatingPill: React.FC<FloatingPillProps> = ({
             intent: userProfile.occupation || 'Note',
             sections: [{ title: 'Notes', content: text }],
             actionItems: [],
+            _providerName: 'Offline Engine',
           };
         } else {
           aiResult = {
@@ -315,6 +320,7 @@ export const FloatingPill: React.FC<FloatingPillProps> = ({
               },
             ],
             actionItems: [],
+            _providerName: 'Audio Capture',
           };
         }
       }
@@ -331,6 +337,8 @@ export const FloatingPill: React.FC<FloatingPillProps> = ({
         audioBlob: audioBlob || undefined,
         audioUrl: audioBlob ? URL.createObjectURL(audioBlob) : undefined,
         createdAt: Date.now(),
+        aiProvider: aiResult._providerName || 'Aurora AI',
+        aiModel: aiResult._model,
       };
 
       // Save locally to IndexedDB & fallback
