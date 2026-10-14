@@ -1,0 +1,6 @@
+{
+  "name": "Aurora",
+  "description": "Ambient AI voice note taking workspace with floating recorder pill, offline transcription, custom persona profiles, live transcript editor, and cloud synchronization.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

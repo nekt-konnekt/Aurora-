@@ -1,0 +1,6 @@
+{
+  "summary": "Architectural implementation plan for AuraNote AI: a lightweight floating voice note app featuring persona-adaptive intent extraction (Artist, Lawyer, Doctor, Architect, Consultant, and Custom profiles), offline transcription, draggable floating pill widget, and offline-first persistence with instant Markdown and audio export.",
+  "updatedAt": "2026-10-14T15:14:30.039389204Z",
+  "requestFeedback": true,
+  "userFacing": true
+}
